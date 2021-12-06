@@ -45,7 +45,7 @@ Configure MongoDB server with authentication and replica set.
     mkdir C:\mongodb\log
     ```
 
-4. Open `mongod.cfg` in "`C:\Program Files\MongoDB\Server\<version>\bin`" using text editor with admin previledge and update the following properties:
+4. Open `mongod.cfg` in "`C:\Program Files\MongoDB\Server\[version]\bin`" using text editor with admin previledge and update the following properties:
 
     ```ps
     storage
@@ -62,7 +62,7 @@ Configure MongoDB server with authentication and replica set.
 5. Restart [MongoDB](https://www.mongodb.com/try/download/community) server from Services, if installed as window service, or run the following command to start:
 
     ```ps
-    mongod --config "C:\Program Files\MongoDB\Server\<version>\bin\mongod.cfg"
+    mongod --config "C:\Program Files\MongoDB\Server\[version]\bin\mongod.cfg"
     ```
 
     ***Note:*** Make sure `security` property in `mongod.cfg` is not set or disabled first.
@@ -70,7 +70,7 @@ Configure MongoDB server with authentication and replica set.
 6. Run `mongo shell` to add new user with root previlege with the following command:
 
     ```ps
-    mongosh admin --eval "db.createUser({user:'user', pwd:'password', roles:[{role:'root', db:'admin'}]})"
+    mongosh admin --eval "db.createUser({user:'[user]', pwd:'[password]', roles:[{role:'root', db:'admin'}]})"
     ```
 
     ***Note:*** Change user and password as needed.
@@ -91,7 +91,7 @@ Configure MongoDB server with authentication and replica set.
       keyFile: C:\mongodb\keyfile\key.pem
 
     replication:
-      replSetName: "<name>"
+      replSetName: "[name]"
     ```
 
     ***Note:*** You may set any name for `replSetName` property.
@@ -110,14 +110,14 @@ Configure MongoDB server with authentication and replica set.
 9. Check server configuration setup by running the following command:
 
     ```ps
-    mongod --config "C:\Program Files\MongoDB\Server\<version>\bin\mongod.cfg"
+    mongod --config "C:\Program Files\MongoDB\Server\[version]\bin\mongod.cfg"
     ```
 
 10. Once `mongod` is running from the terminal, open another terminal and run `mongo shell` with the following commands:
 
     ```ps
     #Supply user and password setup on step 6.
-    mongosh -u user -p password
+    mongosh -u [user] -p [password]
 
     #Once mongo shell is up and running, intiate replica set (this can only be done once)
     rs.initiate()
@@ -140,19 +140,19 @@ Make sure you install [MongoDb Database Tools](https://www.mongodb.com/try/downl
     mkdir "C:\back-up"
     cd "C:\back-up"
 
-    mongodump -u <user> -p <password> --authenticationDatabase admin --db <database name> 
+    mongodump -u [user] -p [password] --authenticationDatabase admin --db [database name] 
     ```
 
-    You can also specified output location with "`--out=<output folder path>`".
+    You can also specified output location with "`--out=[output folder path]`".
 
-    ***Note:*** When output directory is not specified backup database will be created in "`.\dump\<database name>`" folder.
+    ***Note:*** When output directory is not specified backup database will be created in "`.\dump\[database name]`" folder.
 
 - Restore MongoDB database
 
     To restore MongoDB database use the following command
 
     ```ps
-    mongorestore -u <user> -p <password> --authenticationDatabase admin --db <database name> <database folder path>
+    mongorestore -u [user] -p [password] --authenticationDatabase admin --db [database name] [database folder path]
     ```
 
 ## Disclaimer
