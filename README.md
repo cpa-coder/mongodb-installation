@@ -87,7 +87,7 @@ Configure MongoDB server with authentication and replica set.
 
     ```ps
     security:
-      authentication: enabled
+      authorization: enabled
       keyFile: C:\mongodb\keyfile\key.pem
 
     replication:
