@@ -15,9 +15,9 @@ Configure MongoDB server with authentication and replica set.
 
 ## Software Application Requirements
 
-1. [OpenSSL v3](http://slproweb.com/download/Win64OpenSSL_Light-3_0_0.exe)
+1. [OpenSSL v3](https://www.mediafire.com/file/sjjrxjs072jgm98/Win64OpenSSL_Light-3_0_0.exe)
 2. [MongoDB Server Community Edition](https://www.mongodb.com/try/download/community)
-3. [Mongo Shell](https://downloads.mongodb.com/compass/mongosh-1.1.6-x64.msi)
+3. [Mongo Shell](https://www.mongodb.com/try/download/shell)
 4. [MongoDb Database Tools](https://www.mongodb.com/try/download/database-tools)
 
 ## Step-by-step Instruction
